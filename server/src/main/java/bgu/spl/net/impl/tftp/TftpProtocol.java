@@ -1,18 +1,19 @@
 package bgu.spl.net.impl.tftp;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.concurrent.ConcurrentHashMap;
-import bgu.spl.net.api.BidiMessagingProtocol;
-import bgu.spl.net.srv.Connections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+
+import bgu.spl.net.api.BidiMessagingProtocol;
+import bgu.spl.net.srv.Connections;
 
 
 
@@ -24,7 +25,6 @@ class holder {
 public class TftpProtocol implements BidiMessagingProtocol<byte[]>  {
 
 //-------------fields----------------//
-
 
     // INITIALIZATION PARAMETERS
     private boolean shouldTerminate = false;
@@ -44,7 +44,6 @@ public class TftpProtocol implements BidiMessagingProtocol<byte[]>  {
     private ByteArrayInputStream inputStream;
     private final int chunkSize = 512;
    
-
     // MANAGE INCOMING DATA
     private String targetFilePath;
     private String targetFileName;
@@ -69,7 +68,6 @@ public class TftpProtocol implements BidiMessagingProtocol<byte[]>  {
         this.targetFilePath = "null";
         this.targetFileName = "null";
         this.dataBuffer = new ByteArrayOutputStream();
-
 
     }
 
@@ -298,8 +296,6 @@ public class TftpProtocol implements BidiMessagingProtocol<byte[]>  {
             }
         }
     }
-
-
 
 
     // method that handles Errors. creates an Error packet ready to be sent to the client //

@@ -1,22 +1,15 @@
 package bgu.spl.net.impl.tftp;
-import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.Socket;
 import java.nio.charset.StandardCharsets;
-import java.util.List;
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.nio.file.Path;
-import bgu.spl.net.api.MessageEncoderDecoder;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.io.FileOutputStream;
-import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class TftpKeyboardThread implements Runnable {
 // -reads commands from the keyboard:
@@ -36,7 +29,7 @@ public class TftpKeyboardThread implements Runnable {
     private String message;
     private boolean isLoggedIn = false;
 
-    ////// fields copied from connectionHandler:
+    // fields copied from connectionHandler:
     private final TftpProtocol protocol;
     private final TftpEncoderDecoder encdec;
     private Scanner scanner;

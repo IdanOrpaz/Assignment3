@@ -1,22 +1,15 @@
 package bgu.spl.net.impl.tftp;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
-import java.util.concurrent.ConcurrentHashMap;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 
 public class TftpProtocol{
@@ -63,8 +56,10 @@ public class TftpProtocol{
     public  TftpProtocol() {
         // TODO implement this
         this.shouldTerminate = false;
-        this.directory = new File("./" );
-        
+        this.directory = new File("./Files" );
+        if (!directory.exists()) {
+            directory.mkdirs();  // Create the "Files" directory
+        }
     }
 
 

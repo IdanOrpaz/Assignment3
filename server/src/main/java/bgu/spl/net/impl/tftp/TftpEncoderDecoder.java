@@ -8,7 +8,6 @@ import bgu.spl.net.api.MessageEncoderDecoder;
 public class TftpEncoderDecoder implements MessageEncoderDecoder<byte[]> {
     //TODO: Implement here the TFTP encoder and decoder
 
-
 //-------------------fields-------------------//
 
     private byte[] bytes = new byte[1 << 10]; //start with 1k
@@ -161,7 +160,6 @@ public class TftpEncoderDecoder implements MessageEncoderDecoder<byte[]> {
             return null;
         }
 
-        //
         else if(len == 5){
             pushByte(nextByte);
             byteBlockNumberArray[1] = nextByte;
